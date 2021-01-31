@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "Shippers Loadrix -Ship with Truckers &amp; Carriers">
+    <!ENTITY appNameCaps "Shippers Loadrix -Ship with Truckers &amp; Carriers">
+    <!ENTITY Provider "Driver"><!ENTITY provider "driver"><!ENTITY Service "Delivery">
+    <!ENTITY service "delivery">]>
+<resources>
+
+    <string name="app_name">&appName;</string>
+    <!--Facebook App Id-->
+    <string name="facebook_app_id" translatable="false">636856756924579</string>
+    <string name="google_login_key" translatable="false">226738061342-mk51k18katbq6e2nggho10s8mloc7pfh.apps.googleusercontent.com</string>
+
+    <!--Navigation Drawer -->
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="action_settings">Configuraciones</string>
+
+    <!--Nav items-->
+    <string name="action_payment">Pago</string>
+    <string name="action_trips">Sus Entregas</string>
+    <string name="action_coupon">Cupón</string>
+    <string name="action_wallet">Billetera</string>
+    <string name="action_help">Contactenos</string>
+    <string name="action_share">Compartir</string>
+    <string name="action_logout">Cerrar Sesión</string>
+
+    <!--Activity Email -->
+    <string name="whats_your_mail_address">Cuál es tu dirección de correo electrónico?</string>
+    <string name="whats_your_phone_number">Cuál es tu número de teléfono?</string>
+    <string name="sample_mail_id" translatable="false">name@examplecom</string>
+
+    <!--Activity Password -->
+    <string name="welcome_back">Bienvenido de nuevo, inicie sesión para continuar </string>
+    <string name="enter_your_password">Ingrese su contraseña</string>
+    <string name="i_forgot_my_password">Olvidé mi contraseña</string>
+    <string name="i_need_to_create_an_account">Necesito crear una cuenta</string>
+    <string name="apply">APLICAR</string>
+
+
+    <!--Activity Register-->
+    <string name="email">Correo Electrónico</string>
+    <string name="name">Nombre de usuario</string>
+    <string name="phone_number">Número de teléfono</string>
+    <string name="password">Contraseña</string>
+    <string name="first_name">Primer nombre</string>
+    <string name="last_name">Apellido</string>
+    <string name="mobile_no" translatable="false">9876543210</string>
+    <string name="password_txt" translatable="false">******</string>
+
+    <!-- Activity ForgetPassword -->
+    <string name="recover_password">Ingrese su ID de correo para recuperación de datos</string>
+
+    <!-- Coupon Fragment-->
+    <string name="enter_the_coupon">Entrar código de cupón</string>
+    <string name="add_coupon">AGREGAR CUPÓN</string>
+    <string name="add_coupon_code">Agregar código de cupón</string>
+
+
+    <!--Welcome screen-->
+    <string name="sign_in">Iniciar sesión</string>
+    <string name="signup">Regístrarse</string>
+
+    <string name="fresh">B i e n v e n i d o</string>
+    <string name="search">P r o g r a m a r</string>
+    <string name="bookmark">C o n d u c t o r e s</string>
+
+    <string name="fresh_description">Presentamos &appName; Servicios para transportar su mercancía a donde lo necesite acarrear.</string>
+    <string name="search_description">Envíe su mercancía cuando y donde quiera. Planifique y programe el acarreo para que lo transportemos.</string>
+    <string name="bookmark_description">Tenemos los conductores más amigables que harán hasta un esfuerzo extra por usted.</string>
+
+    <!-- Edit Activity-->
+    <string name="edit_profile">Editar Cuenta</string>
+    <string name="change_password">Cambia contraseña</string>
+    <string name="save">SALVAR</string>
+    <string name="update_success">Perfil Actualizado</string>
+
+
+    <!-- Home Fragment-->
+    <string name="where_to_go">Elegir los lugares de recogida y entrega</string>
+    <string name="extend_trip">Extender la entrega?</string>
+    <string name="selected_payment_mode">Efectivo</string>
+    <string name="select_service">Seleccionar Servicio</string>
+    <string name="change">Cambiar</string>
+    <string name="request_xuber">Obtener tarifa</string>
+
+
+    <!--Schedule Layout -->
+    <string name="schedule">Planificar una &Service;</string>
+    <string name="sample_date">Elige una fecha</string>
+    <string name="sample_time">Elige una hora</string>
+    <string name="next">Programar &Service;</string>
+    <string name="different_time">No puede programar a horas pasados, elija un horario diferente</string>
+    <string name="choose_date_time">Por favor, elija fecha y hora para el servicio</string>
+    <string name="upcoming_trips">Próximas Entregas</string>
+    <string name="past_trips">Entregas Pasadas</string>
+
+    <!--Service List Item -->
+    <string name="no_service">Servicio no disponible en esta ubicación.</string>
+
+    <!--Approximate -->
+    <string name="approximate">Tarifa Estimada</string>
+    <string name="eta_time">Tiempo Estimado</string>
+
+    <!-- Confirm your pickup -->
+    <string name="close">Cerrar</string>
+    <string name="sample_address">Costa del Este, entrando por Urb. Chanis, contiguo a Atrio Mall</string>
+    <string name="done">Hecho</string>
+
+    <!-- Waiting for provider -->
+    <string name="looking_for_ride">Buscando &Service;....</string>
+    <string name="cancel_ride">Cancelar &service;</string>
+    <string name="share">Compartir</string>
+    <string name="cancel_ride_alert">Está seguro de que desea cancelar el &service;?</string>
+    <string name="no_drivers_found">No hay conductores disponibles para su entrega</string>
+    <string name="driver_busy">Su &Service; fue cancelado por el &Provider;. Por favor contáctenos para soporte</string>
+
+
+    <!--Driver Accepted-->
+    <string name="sample_name">Will Smith</string>
+    <string name="sample_service">BMW</string>
+    <string name="call_btn">Llamada</string>
+    <string name="cancel_trip">Cancelar entrega</string>
+    <string name="surge_pricing">Debido a las horas pico, los cargos variarán según la disponibilidad de los conductores.</string>
+    <string name="pickup_drop">Ingrese las ubicaciones de recogida y entrega</string>
+
+
+    <!--Payment Fragment-->
+    <string name="payment">Pago</string>
+    <string name="payment_methods">Métodos de Pago</string>
+    <string name="payment_methods_past">Método de Pago</string>
+    <string name="add_payments">Agregar Tarjeta para pagos</string>
+    <string name="add">Agregar Tarjeta</string>
+    <string name="enter_card_details">Datos de la tarjeta no válidos</string>
+    <string name="are_you_sure">Está seguro de que quiere eliminarlo?</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
+
+
+    <!--Status -->
+    <string name="arrived">&Provider; ha llegado y recogido su mercancía</string>
+    <string name="picked_up">usted está en &service;</string>
+
+    <!--Your Trips-->
+    <string name="history">Historial</string>
+    <string name="comments">Comentarios</string>
+    <string name="no_trips">No tienes entregas pasadas</string>
+    <string name="no_upcoming_trips">No tienes próximas entregas</string>
+    <string name="your_trips">Sus entregas</string>
+    <string name="upcoming">Próxima</string>
+    <string name="past">Pasada</string>
+
+
+    <!--Invoice -->
+    <string name="invoice">Factura</string>
+    <string name="base_price">Tarifa base</string>
+    <string name="booking_id">ID de Reserva</string>
+    <string name="sample_base_price" translatable="false">0</string>
+    <string name="sample_distance" translatable="false">1 KM</string>
+    <string name="sample_time_travel" translatable="false">1 hr</string>
+    <string name="extra_price">Extra</string>
+    <string name="tax">Impuesto</string>
+    <string name="wallet_detection">Detección de Billetera</string>
+    <string name="discount_detection">Descuento Aplicado</string>
+    <string name="total">Total</string>
+    <string name="pay_now">Pagar Ahora</string>
+    <string name="distance_price">Tarifa por distancia</string>
+
+
+    <!--Rate provider-->
+    <string name="rate_provider">Califique su entrega con</string>
+    <string name="write_your_comment">Escriba su comentario</string>
+    <string name="submit">Enviar</string>
+
+
+    <!-- Source and destination-->
+    <string name="source_location">Ubicación de origen</string>
+
+    <!--Show Dailog-->
+    <string name="connect_to_network">Conéctese a la red o salga</string>
+    <string name="change_pwd_dialog">Su contraseña se ha actualizado correctamente. Inicie sesión con su nueva contraseña.</string>
+    <string name="cencel_request">Está seguro de que desea cancelar el &service;?</string>
+    <string name="connect_to_wifi">Conectarse al WIFI</string>
+    <string name="quit">Salir</string>
+
+
+    <!-- Error Messages-->
+    <string name="something_went_wrong">Algo salió mal</string>
+    <string name="something_went_wrong_net">Algo salió mal, por favor verifique la conexión a internet</string>
+    <string name="oops_connect_your_internet">¡Uy! Conecte su internet</string>
+    <string name="server_down">No se puede acceder al servidor</string>
+    <string name="please_try_again">Inténtelo de nuevo</string>
+    <string name="please_wait">Por favor espere...</string>
+    <string name="email_validation">Ingrese su ID de correo electrónico</string>
+    <string name="phone_validation">Ingrese su número telefónico</string>
+    <string name="not_valid_email">No es una ID de correo electrónico válida</string>
+    <string name="password_validation">La contraseña no se puede dejar en blanco</string>
+    <string name="first_name_empty">Primer nombre es necesario</string>
+    <string name="last_name_empty">Apellido es necesario</string>
+    <string name="mobile_number_empty">Número de móvil es necesario</string>
+    <string name="enter_details_register">Ingrese sus datos para registrarse</string>
+    <string name="fb_cancel">Inicio de sesión en Facebook cancelado</string>
+    <string name="fb_error">Error de inicio de sesión en Facebook</string>
+    <string name="google_login">Error de inicio de sesión en Google</string>
+    <string name="invalid_otp">Por favor, ingrese su OTP</string>
+    <string name="wrong_otp">OTP Incorrecto</string>
+
+    <!--True or False -->
+    <string name="True" translatable="false">true</string>
+    <string name="False" translatable="false">false</string>
+
+    <string name="add_money_using">Agrega dinero usando</string>
+    <string name="add_money">Agregar Dinero</string>
+    <!--Coupon Activity-->
+    <string name="not_vaild_coupon">Cupón no es válido o puede estar vencido</string>
+    <string name="coupon_added">Cupón aplicado con éxito</string>
+    <string name="add_coupon_txt">Agregar Cupón</string>
+    <string name="added_coupon">Cupón aplicado por usted</string>
+    <string name="already_in_use_coupon">Cupón ya fue usado por usted</string>
+    <string name="expired_coupon">Lo sentimos, el cupón ha expirado</string>
+    <string name="off">CANCELADO</string>
+    <string name="the_applied_coupon">El código de cupón aplicado es</string>
+    <string name="valid_until">Válido hasta</string>
+
+
+    <!--Wallet Activity-->
+    <string name="wallet_balance">El monto de su billetera es</string>
+
+
+    <!--Change Password-->
+    <string name="change_password_title">Cambia Contraseña</string>
+    <string name="current_password">Contraseña Actual</string>
+    <string name="new_password">Nueva Contraseña</string>
+    <string name="confirm_password">Confirmar Nueva Contraseña</string>
+    <string name="please_enter_current_pass">Por favor ingrese la contraseña actual</string>
+    <string name="please_enter_new_pass">Por favor ingrese una nueva contraseña</string>
+    <string name="please_enter_confirm_pass">Por favor confirme la contraseña</string>
+    <string name="different_passwords">La contraseña no coincide</string>
+    <string name="commision">Cargo por servicio</string>
+    <string name="request_cancel">Has cancelado la solicitud</string>
+
+    <!-- Toolbar titles when navigation menu item is selected -->
+    <string-array name="nav_item_activity_titles">
+        <item>Inicio</item>
+        <item>Fotos</item>
+        <item>Películas</item>
+        <item>Notificaciones</item>
+        <item>Configuraciones</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hola fragmento en blanco</string>
+    <string name="valid_image">No se ha encontrado ninguna imagen.</string>
+    <string name="otp_validation">Ingrese el campo OTP es obligatorio</string>
+    <string name="inncorrect_otp">OTP Incorrecta</string>
+    <string name="confirm_password_validation">Contraseña no coincide</string>
+    <string name="reset_password">Restablecer Contraseña</string>
+    <string name="note">Nota: Ingrese el OTP enviado a su dirección de correo electrónico registrada</string>
+    <string name="secrete_code">Ingrese su OTP</string>
+    <string name="connect_with_social_media">conectarse mediante red social</string>
+    <string name="logout_alert">Está seguro de que quiere cerrar sesión?</string>
+    <string name="distance_travelled">Distancia Recorrida</string>
+    <string name="time_taken">Tiempo Empleado</string>
+    <string name="extend_trip_alert">Desea extender la entrega con la ubicación seleccionada?</string>
+    <string name="choose_social">Elija una cuenta</string>
+    <string name="facebook_name">Facebook</string>
+    <string name="google_name">Google</string>
+    <string name="no_comments">No hay comentarios disponibles.</string>
+    <string name="pin_location">Establecer ubicación del pin</string>
+    <string name="english">Inglés</string>
+    <string name="spanish">Español</string>
+    <string name="home_location">Inicio</string>
+    <string name="delete">Eliminar</string>
+    <string name="favorites">Favoritos</string>
+    <string name="language">Cambiar Idioma</string>
+    <string name="add_home_location">Agregar Inicio</string>
+    <string name="work_location">Trabajo</string>
+    <string name="add_work_location">Agregar Trabajo</string>
+    <string name="save_location">Lugares guardados</string>
+    <string name="type">Modelo</string>
+    <string name="emaergeny_call">Seguro que quiere continuar con la llamada de emergencia?</string>
+    <string name="user_no_mobile">Sin número de móvil</string>
+    <string name="profile">Perfil</string>
+    <string name="reason_to_cancel">Razón de la cancelación</string>
+
+    <!--Activity Help-->
+    <string name="help_msg">Nuestro equipo responderá pronto!</string>
+    <string name="help_title">Contáctenos</string>
+    <string name="schedule_request">Programar &Service;</string>
+    <string name="surge_pricing_title">Debido a la alta demanda, el precio puede variar</string>
+    <string name="request_now">Entregar ahora</string>
+    <string name="help">Contáctenos</string>
+    <string name="book_name">ID de Reserva</string>
+    <string name="password_size">El tamaño de la contraseña debe ser al menos 6</string>
+    <string name="sorry_for_inconvinent">Disculpe las molestias, los asistentes están ocupados en este momento</string>
+    <string name="email_exist">El email ya ha sido registrado</string>
+    <string name="first_name_no_number">Nombre no acepta números</string>
+    <string name="last_name_no_number">Apellido no acepta números</string>
+    <string name="ok">De acuerdo</string>
+    <string name="use_wallet_amount">Use la cantidad de la billetera</string>
+    <string name="arriving">&Provider; aceptó su solicitud.</string>
+    <string name="view_invoice">Ver recibo</string>
+    <string name="walletHistory">Historial de Billetera</string>
+    <string name="couponHistory">Historial de Cupones</string>
+    <string name="passbook">Libreta de Depósitos</string>
+    <string name="settings">Configuraciones</string>
+    <string name="no_wallet_history">No hay historial de billetera disponible!</string>
+    <string name="no_coupon_history">No hay historial de cupones disponible!</string>
+    <string name="new_version_available">Nueva versión disponible</string>
+    <string name="update_to_continue">Por favor, actualice la app a la nueva versión.</string>
+    <string name="update">Actualizar</string>
+    <string name="no_thanks">No, gracias</string>
+    <string name="new_password_validation">La nueva contraseña no debe ser la misma que la anterior.</string>
+    <string name="add_amount">AGREGAR CANTIDAD</string>
+    <string name="enter_the_amount">Ingrese la cantidad</string>
+    <string name="add_money_to_wallet">AGREGAR DINERO A LA BILLETERA</string>
+    <string name="version">Versión</string>
+    <string name="source_dest_not_same">La dirección de origen y de destino no debe ser la misma!</string>
+    <string name="language_update">Actualizando Idioma ... Por favor espere</string>
+
+    <!--Activity Begin-->
+    <string name="or_connect_with_social_media">O conecte con redes sociales</string>
+    <string name="enter_loc" translatable="false">Enter location</string>
+    <string name="what_are_moving_for_u" translatable="false">Let us deliver it for you</string>
+    <string name="can_not_add_loc" translatable="false">Can\'t add more than 3 Locations</string>
+    <string name="drop_location" translatable="false">Drop location</string>
+    <string name="pickup_loc" translatable="false">Pickup location</string>
+    <string name="enter_your_goods" translatable="false">What are you sending?</string>
+    <string name="cancel" translatable="false">Cancel</string>
+
+    <string name="do_not_have_account" translatable="false">Don\'t have an account?</string>
+    <string name="sign_up" translatable="false">SIGN UP</string>
+    <string name="here" translatable="false">here</string>
+    <string name="normal_user" translatable="false">Normal User</string>
+    <string name="business_user" translatable="false">Business User</string>
+    <string name="select_type" translatable="false">Select type</string>
+    <string name="track_order" translatable="false">Track Order</string>
+    <string name="order" translatable="false">Order</string>
+    <string name="trip" translatable="false">Delivery </string>
+    <string name="delivery_address" translatable="false">Delivery Address</string>
+    <string name="status" translatable="false">Status</string>
+    <string name="empty_goods" translatable="false">Goods required</string>
+    <string name="empty_dest" translatable="false">Destination address required</string>
+    <string name="user_type">Tipo de Usuario</string>
+    <string name="yet_pickup">Orden Aún por Recoger</string>
+    <string name="pickup">Orden Recogida</string>
+    <string name="order_delivered">Orden Entregada</string>
+    <string name="no_of_trips">No. de Entregas :</string>
+    <string name="alert">Seguro que quiere eliminar esta ubicación?</string>
+
+    <string name="otp_cat">OTP : %1$s</string>
+    <string name="added_to_wallet">agregado a su billetera</string>
+    <string name="payment_failed">Pago fallido</string>
+    <string name="write_something">escriba algo…</string>
+    <string name="chat">Chat</string>
+</resources>
