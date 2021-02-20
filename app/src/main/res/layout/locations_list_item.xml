@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_5sdp"
+    android:layout_margin="@dimen/_10sdp"
     android:padding="@dimen/_5sdp"
-    android:background="@android:color/white"
     android:elevation="@dimen/_5sdp">
 
     <RelativeLayout
@@ -36,6 +36,7 @@
                 android:layout_height="10dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="10dp"
+                android:tint="@color/colorPrimary"
                 android:src="@drawable/round" />
 
             <View
@@ -51,6 +52,7 @@
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:layout_gravity="center_vertical"
+                android:tint="@color/colorPrimary"
                 android:layout_marginEnd="10dp"
                 android:src="@drawable/box" />
         </LinearLayout>
@@ -60,7 +62,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/close_img"
             android:layout_marginTop="@dimen/_5sdp"
-            android:layout_toRightOf="@+id/src_img_layout"
             android:layout_toEndOf="@+id/src_img_layout"
             android:orientation="vertical">
 
@@ -72,6 +73,7 @@
                 android:background="@drawable/border_stroke"
                 android:lines="1"
                 android:hint="@string/pickup_loc"
+                android:clickable="true"
                 android:padding="@dimen/_7sdp" />
 
             <com.delivery.app.Utils.MyTextView
@@ -92,12 +94,73 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/src_img_layout"
+            android:orientation="vertical"
             android:padding="@dimen/_10sdp">
+
+
+            <TextView
+                android:id="@+id/reciver_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/receiver_name" />
+
+            <LinearLayout
+                android:id="@+id/reciver_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp">
+
+                <com.delivery.app.Utils.MyTextView
+                    android:id="@+id/rec_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:background="@drawable/border_stroke"
+                    android:gravity="start"
+                    android:hint="@string/name_here"
+                    android:lines="1"
+                    android:padding="@dimen/_6sdp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/reciver_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/receiver_number"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/reciver_number"
+                android:paddingTop="@dimen/_5sdp"
+                android:visibility="visible">
+
+                <com.delivery.app.Utils.MyTextView
+                    android:id="@+id/rec_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:background="@drawable/border_stroke"
+                    android:gravity="start"
+                    android:hint="@string/mobile_no_hint"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:padding="@dimen/_6sdp" />
+
+            </LinearLayout>
+
 
             <com.delivery.app.Utils.MyTextView
                 android:id="@+id/good_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
                 android:layout_gravity="start"
                 android:background="@drawable/border_stroke"
                 android:gravity="start"
@@ -106,6 +169,9 @@
                 android:padding="@dimen/_3sdp" />
 
         </LinearLayout>
+
+
+
 
     </RelativeLayout>
 

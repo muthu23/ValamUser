@@ -358,4 +358,13 @@
     <string name="view" translatable="false">View</string>
     <string name="chat">Chat</string>
     <string name="mobile_exist">The mobile no already exist</string>
+
+    <string name="receiver_name" translatable="false">Receiver name</string>
+    <string name="receiver_number" translatable="false">Receiver phone number</string>
+    <string name="name_here" translatable="false">Name here</string>
+    <string name="mobile_no_hint" translatable="false">0987654321</string>
+
+    <string name="uploading">Uploading…</string>
+
+
 </resources>

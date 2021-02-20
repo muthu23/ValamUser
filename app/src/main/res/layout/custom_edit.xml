@@ -9,13 +9,147 @@
         android:id="@+id/desc"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_margin="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:visibility="gone"
+        android:layout_weight="0.13"
         android:background="@drawable/border_stroke"
+        android:gravity="start"
         android:hint="@string/enter_your_goods"
         android:inputType="textNoSuggestions|textMultiLine"
-        android:layout_weight="0.13"
-        android:gravity="start"
-       android:paddingLeft="@dimen/_10sdp"
-        android:paddingTop="@dimen/_10sdp"/>
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+
+            <TextView
+                android:id="@+id/reciver_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/receiver_name" />
+
+            <LinearLayout
+                android:id="@+id/reciver_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp">
+
+                <com.delivery.app.Utils.MyEditText
+                    android:id="@+id/rec_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:background="@drawable/border_stroke"
+                    android:gravity="start"
+                    android:textSize="@dimen/_12sdp"
+                    android:hint="@string/name_here"
+                    android:lines="1"
+                    android:padding="@dimen/_6sdp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/reciver_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/reciver_name_layout"
+                android:paddingTop="@dimen/_5sdp"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/receiver_number"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp"
+                android:visibility="visible">
+
+                <com.delivery.app.Utils.MyEditText
+                    android:id="@+id/rec_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:background="@drawable/border_stroke"
+                    android:gravity="start"
+                    android:hint="@string/mobile_no_hint"
+                    android:textSize="@dimen/_12sdp"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:padding="@dimen/_6sdp" />
+
+            </LinearLayout>
+
+
+            <com.delivery.app.Utils.MyEditText
+                android:id="@+id/good_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:layout_gravity="start"
+                android:background="@drawable/border_stroke"
+                android:gravity="start"
+                android:hint="@string/enter_your_goods"
+                android:lines="3"
+                android:textSize="@dimen/_12sdp"
+                android:padding="@dimen/_3sdp" />
+
+
+            <LinearLayout
+                android:id="@+id/lnr_helper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:visibility="visible"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/check_helper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:text="Need helpers"/>
+
+                <com.delivery.app.Utils.MyEditText
+                    android:id="@+id/helper_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_gravity="start"
+                    android:background="@drawable/border_stroke"
+                    android:visibility="gone"
+                    android:textSize="@dimen/_12sdp"
+                    android:inputType="number"
+                    android:gravity="start"
+                    android:hint="Enter helper count"
+                    android:lines="1"
+                    android:padding="@dimen/_6sdp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+
 
 </LinearLayout>

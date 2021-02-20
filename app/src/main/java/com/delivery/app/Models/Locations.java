@@ -15,6 +15,10 @@ public class Locations extends Throwable implements Serializable{
     String sLongitude;
     String dLongitude;
     String goods;
+    String reciver_name;
+    String reciver_number;
+    String helper_count;
+
 
     public String getsAddress() {
         return sAddress;
@@ -83,5 +87,30 @@ public class Locations extends Throwable implements Serializable{
                 ", dLongitude='" + dLongitude + '\'' +
                 ", goods='" + goods + '\'' +
                 '}';
+    }
+
+
+    public String getReciver_name() {
+        return reciver_name;
+    }
+
+    public void setReciver_name(String reciver_name) {
+        this.reciver_name = reciver_name;
+    }
+
+    public String getReciver_number() {
+        return reciver_number;
+    }
+
+    public void setReciver_number(String reciver_number) {
+        this.reciver_number = reciver_number;
+    }
+
+    public String getHelper_count() {
+        return helper_count;
+    }
+
+    public void setHelper_count(String helper_count) {
+        this.helper_count = helper_count;
     }
 }

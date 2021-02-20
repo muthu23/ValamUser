@@ -28,6 +28,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.core.app.ActivityCompat;
+import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.core.content.ContextCompat;
@@ -240,6 +241,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
     //         <!--2. Approximate Rate ...-->
     MyBoldTextView lblEta;
     MyBoldTextView lblType;
+    MyBoldTextView lblHelper;
     MyBoldTextView lblApproxAmount, surgeDiscount, surgeTxt;
     View lineView;
     LinearLayout ScheduleLayout;
@@ -330,7 +332,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                 if (mapfocus.getVisibility() == View.VISIBLE) {
                     mapfocus.setVisibility(View.INVISIBLE);
                 }
-                if (mMap.getCameraPosition().zoom < 16.0f) {
+                if (mMap.getCameraPosition().zoom < 14.0f) {
                     if (mapfocus.getVisibility() == View.INVISIBLE) {
                         mapfocus.setVisibility(View.VISIBLE);
                     }
@@ -460,6 +462,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         chkWallet = rootView.findViewById(R.id.chkWallet);
         lblEta = rootView.findViewById(R.id.lblEta);
         lblType = rootView.findViewById(R.id.lblType);
+        lblHelper = rootView.findViewById(R.id.lblHelper);
         lblApproxAmount = rootView.findViewById(R.id.lblApproxAmount);
         surgeDiscount = rootView.findViewById(R.id.surgeDiscount);
         surgeTxt = rootView.findViewById(R.id.surge_txt);
@@ -608,7 +611,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                         flowValue = 0;
                         if (!current_lat.equalsIgnoreCase("") && !current_lng.equalsIgnoreCase("")) {
                             LatLng myLocation = new LatLng(Double.parseDouble(current_lat), Double.parseDouble(current_lng));
-                            CameraPosition cameraPosition = new CameraPosition.Builder().target(myLocation).zoom(16).build();
+                            CameraPosition cameraPosition = new CameraPosition.Builder().target(myLocation).zoom(14).build();
                             mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                         }
                     } else if (lnrApproximate.getVisibility() == View.VISIBLE) {
@@ -726,7 +729,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                 }
                 if (value == 0) {
                     LatLng myLocation = new LatLng(location.getLatitude(), location.getLongitude());
-                    CameraPosition cameraPosition = new CameraPosition.Builder().target(myLocation).zoom(16).build();
+                    CameraPosition cameraPosition = new CameraPosition.Builder().target(myLocation).zoom(14).build();
                     mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                     mMap.setPadding(0, 0, 0, 0);
                     mMap.getUiSettings().setZoomControlsEnabled(false);
@@ -1502,6 +1505,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                     && !SharedHelper.getKey(context, "name").equalsIgnoreCase(null)
                     && !SharedHelper.getKey(context, "name").equalsIgnoreCase("null")) {
                 lblType.setText(SharedHelper.getKey(context, "name"));
+                lblHelper.setText(SharedHelper.getKey(context, "helper_count"));
             } else {
                 lblType.setText("" + "Moving Truck");
             }
@@ -1668,12 +1672,18 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                     place = place + "s_latitude[" + i + "]=" + location_array.get(i - 1).getsLatitude()
                             + "&s_longitude[" + i + "]=" + location_array.get(i - 1).getsLongitude()
                             + "&d_latitude[" + i + "]=" + location_array.get(i - 1).getdLatitude()
-                            + "&d_longitude[" + i + "]=" + location_array.get(i - 1).getdLongitude() + "&service_items[1]=" + location_array.get(i - 1).getGoods();
+                            + "&d_longitude[" + i + "]=" + location_array.get(i - 1).getdLongitude()
+                            + "&service_items[1]=" + location_array.get(i - 1).getGoods()
+                            + "&helper=" + location_array.get(0).getHelper_count();
+
+
                 } else {
                     place = place + "&s_latitude[" + i + "]=" + location_array.get(i - 1).getsLatitude()
                             + "&s_longitude[" + i + "]=" + location_array.get(i - 1).getsLongitude()
                             + "&d_latitude[" + i + "]=" + location_array.get(i - 1).getdLatitude()
-                            + "&d_longitude[" + i + "]=" + location_array.get(i - 1).getdLongitude() + "&service_items[1]=" + location_array.get(i - 1).getGoods();
+                            + "&d_longitude[" + i + "]=" + location_array.get(i - 1).getdLongitude()
+                            + "&service_items[1]=" + location_array.get(i - 1).getGoods()
+                            + "&helper=" + location_array.get(0).getHelper_count();
                 }
             }
             Log.e(TAG, "getApproximateFare: " + place);
@@ -1696,6 +1706,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                         SharedHelper.putKey(context, "eta_time", response.optString("time"));
                         SharedHelper.putKey(context, "surge", response.optString("surge"));
                         SharedHelper.putKey(context, "surge_value", response.optString("surge_value"));
+                        SharedHelper.putKey(context, "helper_count", response.optString("helper"));
                         setValuesForApproximateLayout();
                         double wallet_balance = response.optDouble("wallet_balance");
                         SharedHelper.putKey(context, "wallet_balance", "" + response.optDouble("wallet_balance"));
@@ -1915,6 +1926,11 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                         params.put("d_longitude[" + i + "]", location_array.get(i - 1).getdLongitude());
                         params.put("service_items[" + i + "]", location_array.get(i - 1).getGoods());
                         params.put("d_address[" + i + "]", location_array.get(i - 1).getdAddress());
+                        params.put("receiver_name[" + i + "]", location_array.get(i - 1).getReciver_name());
+                        params.put("receiver_number[" + i + "]", location_array.get(i - 1).getReciver_number());
+                        if(!location_array.get(0).getHelper_count().isEmpty())
+                        params.put("helper", location_array.get(0).getHelper_count());
+                        else params.put("helper", "0");
                     }
                     try {
                         for (int i = 0; i <= location_array.size() - 1; i++) {
@@ -2279,7 +2295,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                             dest_lng = requestStatusCheckObject.optString("d_longitude");
                             if (!source_lat.equalsIgnoreCase("") && !source_lng.equalsIgnoreCase("")) {
                                 LatLng myLocation = new LatLng(Double.parseDouble(source_lat), Double.parseDouble(source_lng));
-                                CameraPosition cameraPosition = new CameraPosition.Builder().target(myLocation).zoom(16).build();
+                                CameraPosition cameraPosition = new CameraPosition.Builder().target(myLocation).zoom(14).build();
                             }
                             // surge price
                             if (requestStatusCheckObject.optString("surge").equalsIgnoreCase("1")) {
@@ -2309,7 +2325,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                                         if (!source_lat.equalsIgnoreCase("") && !source_lng.equalsIgnoreCase("")) {
                                             LatLng myLocation1 = new LatLng(Double.parseDouble(source_lat),
                                                     Double.parseDouble(source_lng));
-                                            CameraPosition cameraPosition1 = new CameraPosition.Builder().target(myLocation1).zoom(16).build();
+                                            CameraPosition cameraPosition1 = new CameraPosition.Builder().target(myLocation1).zoom(14).build();
                                             mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition1));
                                         }
                                         break;
@@ -3094,7 +3110,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         dest_lng = "";
         if (!current_lat.equalsIgnoreCase("") && !current_lng.equalsIgnoreCase("")) {
             LatLng myLocation = new LatLng(Double.parseDouble(current_lat), Double.parseDouble(current_lng));
-            CameraPosition cameraPosition = new CameraPosition.Builder().target(myLocation).zoom(16).build();
+            CameraPosition cameraPosition = new CameraPosition.Builder().target(myLocation).zoom(14).build();
             mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         }
     }
@@ -3295,7 +3311,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
             layoutChanges();
             if (!current_lat.equalsIgnoreCase("") && !current_lng.equalsIgnoreCase("")) {
                 LatLng myLocation = new LatLng(Double.parseDouble(current_lat), Double.parseDouble(current_lng));
-                CameraPosition cameraPosition = new CameraPosition.Builder().target(myLocation).zoom(16).build();
+                CameraPosition cameraPosition = new CameraPosition.Builder().target(myLocation).zoom(14).build();
                 mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
             }
         }, error -> {
@@ -3607,7 +3623,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
     public void gotoCurrentPosition() {
         if (!current_lat.equalsIgnoreCase("") && !current_lng.equalsIgnoreCase("")) {
             LatLng myLocation = new LatLng(Double.parseDouble(current_lat), Double.parseDouble(current_lng));
-            CameraPosition cameraPosition = new CameraPosition.Builder().target(myLocation).zoom(16).build();
+            CameraPosition cameraPosition = new CameraPosition.Builder().target(myLocation).zoom(14).build();
             mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         }
     }
@@ -3894,7 +3910,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                                     getServiceList();
                                     CameraUpdate center = CameraUpdateFactory.newLatLng(new LatLng(cmPosition.target.latitude,
                                             cmPosition.target.longitude));
-                                    CameraUpdate zoom = CameraUpdateFactory.zoomTo(16);
+                                    CameraUpdate zoom = CameraUpdateFactory.zoomTo(14);
                                     mMap.moveCamera(center);
                                     mMap.moveCamera(zoom);
                                 }
@@ -3918,7 +3934,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                                     getServiceList();
                                     CameraUpdate center = CameraUpdateFactory.newLatLng(new LatLng(cmPosition.target.latitude,
                                             cmPosition.target.longitude));
-                                    CameraUpdate zoom = CameraUpdateFactory.zoomTo(16);
+                                    CameraUpdate zoom = CameraUpdateFactory.zoomTo(14);
                                     mMap.moveCamera(center);
                                     mMap.moveCamera(zoom);
                                 }
@@ -3940,7 +3956,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                             destinationBorderImg.setVisibility(View.VISIBLE);
                             //verticalView.setVisibility(View.GONE);
                             LatLng myLocation = new LatLng(Double.parseDouble(current_lat), Double.parseDouble(current_lng));
-                            CameraPosition cameraPosition = new CameraPosition.Builder().target(myLocation).zoom(16).build();
+                            CameraPosition cameraPosition = new CameraPosition.Builder().target(myLocation).zoom(14).build();
                             mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                             srcDestLayout.setVisibility(View.GONE);
                         }
@@ -3960,7 +3976,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                     try {
                         if (NAV_DRAWER == 0) {
                             if (drawer != null)
-                                drawer.openDrawer(Gravity.START);
+                                drawer.openDrawer(GravityCompat.START);
                         } else {
                             NAV_DRAWER = 0;
                             if (drawer != null)
@@ -3976,7 +3992,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                         crtLat = Double.parseDouble(current_lat);
                         crtLng = Double.parseDouble(current_lng);
                         LatLng loc = new LatLng(crtLat, crtLng);
-                        CameraPosition cameraPosition = new CameraPosition.Builder().target(loc).zoom(16).build();
+                        CameraPosition cameraPosition = new CameraPosition.Builder().target(loc).zoom(14).build();
                         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                         mapfocus.setVisibility(View.INVISIBLE);
                     }

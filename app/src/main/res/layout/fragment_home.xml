@@ -637,6 +637,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_marginTop="@dimen/_5sdp"
+                                    android:visibility="gone"
                                     android:orientation="horizontal">
 
                                     <com.delivery.app.Utils.MyBoldTextView
@@ -743,6 +744,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_marginTop="@dimen/_5sdp"
+                                    android:visibility="visible"
                                     android:orientation="horizontal">
 
                                     <com.delivery.app.Utils.MyBoldTextView
@@ -769,6 +771,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_marginTop="@dimen/_5sdp"
+                                    android:visibility="gone"
                                     android:orientation="horizontal">
 
                                     <com.delivery.app.Utils.MyBoldTextView
@@ -1518,6 +1521,40 @@
 
                                     <com.delivery.app.Utils.MyBoldTextView
                                         android:id="@+id/lblType"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="end"
+                                        android:textColor="@color/text_color_black"
+                                        android:textSize="@dimen/_13sdp" />
+                                </LinearLayout>
+                                <View
+                                    android:id="@+id/lineView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/view_grey_bg" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_15sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_marginEnd="@dimen/_15sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <com.delivery.app.Utils.MyBoldTextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="start"
+                                        android:text="Helper count"
+                                        android:textColor="@color/text_color_black"
+                                        android:textSize="@dimen/_13sdp" />
+
+                                    <com.delivery.app.Utils.MyBoldTextView
+                                        android:id="@+id/lblHelper"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
