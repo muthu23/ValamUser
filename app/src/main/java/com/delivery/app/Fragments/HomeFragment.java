@@ -1469,9 +1469,9 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
         }
         if (!jsonObject.optString("capacity").equalsIgnoreCase("null")) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                lblCapacity.setText(jsonObject.optString("capacity"));
+                lblCapacity.setText(jsonObject.optString("capacity") + " Kgs");
             } else {
-                lblCapacity.setText(jsonObject.optString("capacity") + " peoples");
+                lblCapacity.setText(jsonObject.optString("capacity") + " Kgs");
             }
         } else {
             lblCapacity.setVisibility(View.GONE);

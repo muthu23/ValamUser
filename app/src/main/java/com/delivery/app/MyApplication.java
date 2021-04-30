@@ -13,6 +13,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+//import com.facebook.stetho.Stetho;
 import com.facebook.stetho.Stetho;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -62,9 +63,9 @@ public class MyApplication extends Application {
         FirebaseApp.initializeApp(mInstance);
 //        if(BuildConfig.DEBUG)
 //        strictMode();
-        if (BuildConfig.DEBUG)
+       /* if (BuildConfig.DEBUG)
             Stetho.initializeWithDefaults(this);
-
+*/
         //Newer version of Firebase
         if(!FirebaseApp.getApps(this).isEmpty()) {
             FirebaseDatabase.getInstance().setPersistenceEnabled(true);
@@ -121,8 +122,8 @@ public class MyApplication extends Application {
 
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
-           // mRequestQueue = Volley.newRequestQueue(getApplicationContext());
-            mRequestQueue = Volley.newRequestQueue(this, new OkHttpStack());
+            mRequestQueue = Volley.newRequestQueue(getApplicationContext());
+           //mRequestQueue = Volley.newRequestQueue(this, new OkHttpStack());
         }
 
         return mRequestQueue;

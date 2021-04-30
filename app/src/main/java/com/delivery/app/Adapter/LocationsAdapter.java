@@ -196,7 +196,7 @@ public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.View
         final CheckBox check_helper = custom.findViewById(R.id.check_helper);
         final LinearLayout lnr_helper = custom.findViewById(R.id.lnr_helper);
 
-        lnr_helper.setVisibility(item_position == 0 ? View.VISIBLE : View.GONE);
+        //lnr_helper.setVisibility(item_position == 0 ? View.VISIBLE : View.GONE);
 
         check_helper.setOnCheckedChangeListener((compoundButton, b) -> {
             helper_count.setVisibility(b ? View.VISIBLE : View.GONE);

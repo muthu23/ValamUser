@@ -1279,7 +1279,7 @@
                                             <ImageView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:src="@drawable/people" />
+                                                android:src="@drawable/ic_open_box" />
 
                                             <com.delivery.app.Utils.MyBoldTextView
                                                 android:id="@+id/lblCapacity"
@@ -1542,6 +1542,7 @@
                                     android:layout_marginEnd="@dimen/_15sdp"
                                     android:layout_marginBottom="@dimen/_5sdp"
                                     android:gravity="center"
+                                    android:visibility="gone"
                                     android:orientation="horizontal">
 
                                     <com.delivery.app.Utils.MyBoldTextView
